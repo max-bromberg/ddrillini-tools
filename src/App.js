@@ -1,289 +1,37 @@
 import './App.css';
 import { Component } from 'react';
-
-var pack = [
-  {
-    "": "",
-    "Tier": 1,
-    "CMOD": "Y",
-    "Song Title": "Utopia",
-    "Block": 1
-  },
-  {
-    "": "",
-    "Tier": 1,
-    "CMOD": "Y",
-    "Song Title": "Synchronize",
-    "Block": 1
-  },
-  {
-    "": "",
-    "Tier": 1,
-    "CMOD": "Y",
-    "Song Title": "Gangnam Style",
-    "Block": 1
-  },
-  {
-    "": "",
-    "Tier": 1,
-    "CMOD": "Y",
-    "Song Title": "Summer Days (Haywyre Remix)",
-    "Block": 1
-  },
-  {
-    "": "",
-    "Tier": 1,
-    "CMOD": "Y",
-    "Song Title": "Fly as Me",
-    "Block": 1
-  },
-  {
-    "": "",
-    "Tier": 1,
-    "CMOD": "Y",
-    "Song Title": "Counting Stars",
-    "Block": 1
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "Virtual Freedom",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "SELFISH (Kyun x moo Remix)",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "edamame",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "Ride It",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "Smokin Out The Window",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "Candy Carousel",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "Vanquish The Ghost",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 2,
-    "CMOD": "Y",
-    "Song Title": "Pale Garden",
-    "Block": 2
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "Y",
-    "Song Title": "Go Go Sing",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "N",
-    "Song Title": "Luxvinore",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "Y",
-    "Song Title": "DO IT !",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "Y",
-    "Song Title": "Wicked Fate",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "Y",
-    "Song Title": "Hora Din Moldova",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "Y",
-    "Song Title": "HAPPEE",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 3,
-    "CMOD": "Y",
-    "Song Title": "9mm",
-    "Block": 3
-  },
-  {
-    "": "",
-    "Tier": 4,
-    "CMOD": "Y",
-    "Song Title": "Get Down",
-    "Block": 4
-  },
-  {
-    "": "",
-    "Tier": 4,
-    "CMOD": "Y",
-    "Song Title": "The Queen",
-    "Block": 4
-  },
-  {
-    "": "",
-    "Tier": 4,
-    "CMOD": "Y",
-    "Song Title": "AND LAUGH",
-    "Block": 4
-  },
-  {
-    "": "",
-    "Tier": 4,
-    "CMOD": "Y",
-    "Song Title": "Felis",
-    "Block": 4
-  },
-  {
-    "": "",
-    "Tier": 4,
-    "CMOD": "Y",
-    "Song Title": "Earthquake",
-    "Block": 4
-  },
-  {
-    "": "",
-    "Tier": 4,
-    "CMOD": "Y",
-    "Song Title": "Across The Ocean",
-    "Block": 4
-  },
-  {
-    "": "",
-    "Tier": 5,
-    "CMOD": "Y",
-    "Song Title": "Bad Blood",
-    "Block": 5
-  },
-  {
-    "": "",
-    "Tier": 5,
-    "CMOD": "Y",
-    "Song Title": "Good 2 Go",
-    "Block": 5
-  },
-  {
-    "": "",
-    "Tier": 5,
-    "CMOD": "Y",
-    "Song Title": "kannabis kultivation",
-    "Block": 5
-  },
-  {
-    "": "",
-    "Tier": 5,
-    "CMOD": "Y",
-    "Song Title": "Coffee World",
-    "Block": 5
-  },
-  {
-    "": "",
-    "Tier": 5,
-    "CMOD": "Y",
-    "Song Title": "Bad Apple",
-    "Block": 5
-  },
-  {
-    "": "",
-    "Tier": 6,
-    "CMOD": "Y",
-    "Song Title": "Bubble In The Air",
-    "Block": 6
-  },
-  {
-    "": "",
-    "Tier": 6,
-    "CMOD": "Y",
-    "Song Title": "Libertas",
-    "Block": 6
-  },
-  {
-    "": "",
-    "Tier": 6,
-    "CMOD": "Y",
-    "Song Title": "Leviathan",
-    "Block": 6
-  },
-  {
-    "": "",
-    "Tier": 6,
-    "CMOD": "Y",
-    "Song Title": "Heartbeat",
-    "Block": 6
-  },
-  {
-    "": "",
-    "Tier": 7,
-    "CMOD": "N",
-    "Song Title": "Prism",
-    "Block": 7
-  },
-  {
-    "": "",
-    "Tier": 7,
-    "CMOD": "Y",
-    "Song Title": "Lover's Trick",
-    "Block": 7
-  },
-  {
-    "": "",
-    "Tier": 7,
-    "CMOD": "Y",
-    "Song Title": "6FINGERDEATHPUNCH",
-    "Block": 7
+var packs = {
+  main: (callback) => {
+    import('./packs/main.json').then(module => {
+      callback(module.default)
+    })
   }
-]
+}
 
 export default class App extends Component {
   state = {
+    pack: [],
     picks: [],
     pickString: []
   }
   componentDidMount() {
-    // console.log(pack)
+
+  }
+
+  selectPack = (event) => {
+    let pick = event.target.value
+    if (pick.toLowerCase() === 'main') {
+      packs.main(this.selectPackCallback)
+      
+    }
+  }
+
+  selectPackCallback = (packjson) => {
+    console.log(packjson)
+    this.setState({
+      ...this.state,
+      pack: packjson
+    })
   }
 
   drawNew = () => {
@@ -291,7 +39,8 @@ export default class App extends Component {
     // Move drawnum to argument
 
     console.log('Before copy')
-    var deepCopy = [...pack]
+    console.log(this.state.pack)
+    var deepCopy = [...this.state.pack]
 
     // let pick1 = Math.floor(Math.random() * deepCopy.length)
 
@@ -322,6 +71,12 @@ export default class App extends Component {
       <>
         <div className='has-background-dark' style={{ height: '100vh' }}>
           <div className='section'>
+            <div className='select is-large'>
+              <select onChange={this.selectPack}>
+                <option>Main</option>
+                <option>Dev</option>
+              </select>
+            </div>
             <div className='columns'>
 
               <button className='column button is-black is-large is-one-quarter' onClick={this.drawNew}>Draw</button>
